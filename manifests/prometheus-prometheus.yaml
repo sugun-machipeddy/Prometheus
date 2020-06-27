@@ -28,6 +28,19 @@ spec:
     fsGroup: 2000
     runAsNonRoot: true
     runAsUser: 1000
+  storage:
+    volumeClaimTemplate:
+      metadata:
+        name: pvc
+        namespace: monitoring
+      spec:
+        storageClassName: azurefile
+        resources:
+          requests:
+            storage: 50Gi
+#        selector:
+#          matchLabels:
+#             prometheus: k8s
   serviceAccountName: prometheus-k8s
   serviceMonitorNamespaceSelector: {}
   serviceMonitorSelector: {}

@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: grafana-web-ui
+  namespace: monitoring
+spec:
+  rules:
+  - host: grafana.aidbox.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: grafana
+          servicePort: 3000
