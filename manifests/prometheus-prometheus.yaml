@@ -34,7 +34,8 @@ spec:
         name: pvc
         namespace: monitoring
       spec:
-        storageClassName: azurefile
+#        storageClassName: azurefile
+        storageClassName: gp2
         resources:
           requests:
             storage: 50Gi
